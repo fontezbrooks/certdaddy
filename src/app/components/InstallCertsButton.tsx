@@ -3,7 +3,7 @@ import '../styles/SideMenu.css';
 
 export default function InstallCertsButton() {
     return(
-        <div className={'importCerts'}>
+        <div className={'installCerts'}>
 
         </div>
     )

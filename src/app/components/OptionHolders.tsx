@@ -6,6 +6,7 @@ import CreateCsrButton from "./CreateCsrButton";
 import InstallCertsButton from "./InstallCertsButton";
 import DecodeCsrButton from "./DecodeCsrButton";
 import FreeBtcButton from "./FreeBtcButton";
+import CombinePubAndPrivButton from "./CombinePubAndPrivButton";
 
 export default function OptionHolders(){
     return(
@@ -14,6 +15,7 @@ export default function OptionHolders(){
             <CreatePfxButton/>
             <CreateCsrButton/>
             <InstallCertsButton/>
+            <CombinePubAndPrivButton/>
             <DecodeCsrButton/>
             <FreeBtcButton/>
         </div>
