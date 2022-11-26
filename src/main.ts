@@ -5,11 +5,10 @@ let mainWindow;
 
 const createWindow = () => {
     mainWindow = new BrowserWindow({
-        width: 960,
-        height: 846,
+        width: 1280,
+        height: 832,
         webPreferences: {
             preload: path.join(__dirname, 'preload.js'),
-            nodeIntegration: true,
             contextIsolation: true
         },
     });
@@ -20,7 +19,7 @@ const createWindow = () => {
         mainWindow = null;
     });
 
-    mainWindow.setIcon(path.join(__dirname, 'CertDaddyIcon.png'));
+    // mainWindow.setIcon(path.join(__dirname, 'CertDaddyIcon.png'));
 }
 
 app.whenReady().then(async () => {

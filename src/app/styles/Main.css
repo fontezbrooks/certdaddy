@@ -1,9 +1,28 @@
 body {
+    position: relative;
+    width: 1257px;
+    height: 827px;
+    background: linear-gradient(240.08deg, #7758D1 12.97%, rgba(219, 206, 255, 0.364583) 68.41%, #55438C 100.21%);
+    border-radius: 20px;
+}
+
+.decor {
     position: absolute;
-    width: 960px;
-    height: 846px;
+    width: 1257px;
+    height: 827px;
+    left: 0;
+    top: -8px;
+    background: #DBCEFF;
+    backdrop-filter: blur(2px);
+    border-radius: 20px;
+}
+
+.mainContent {
+    position: absolute;
+    width: 320px;
+    height: 827px;
     left: 320px;
     top: 0;
-    margin: 0;
+
     background: #DBCEFF;
 }

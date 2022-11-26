@@ -1,7 +1,7 @@
 import React from 'react';
-import '../styles/Main.css';
+import '../styles/SideMenu.css';
 
-export default function Home() {
+export default function MainContent(){
     return(
         <div className={'mainContent'}>
 
