@@ -11,13 +11,14 @@
     "moduleResolution": "node",
     "strict": true,
     "sourceMap": true,
+    "baseUrl": ".",
     "target": "es2022",
     "types": ["node"],
     "outDir": "./dist/",
-    "jsx": "react"
+    "jsx": "react",
   },
-  "exclude": [
-    "node_modules"
+  "include": [
+    "src/**/*"
   ],
   "compileOnSave": false,
   "buildOnSave": false
