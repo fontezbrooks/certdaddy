@@ -4,7 +4,9 @@ import '../styles/SideMenu.css';
 export default function HomeButton() {
     return(
         <div className={'homeButton'}>
-
+            <p className={'homeText'}>
+                HOME
+            </p>
         </div>
     )
 }
