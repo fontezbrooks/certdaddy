@@ -1,0 +1,15 @@
+{
+  "name": "certdaddy",
+  "version": "1.0.0",
+  "description": "Certdaddy is a simple tool to manage your SSL certificates",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/fontezbrooks/certdaddy.git",
+  "author": "fontez.brooks <fontez.brooks@cinemassive.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^21.3.1"
+  }
+}
