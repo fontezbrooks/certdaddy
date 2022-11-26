@@ -67,6 +67,17 @@ body {
     top: 58px;
 }
 
+.coolSideBar {
+    position: absolute;
+    width: 37px;
+    height: 403px;
+    left: 38px;
+    top: 44px;
+    border-radius: 40% 2% 2% 44%;
+    background: rgba(29, 32, 62, 0.3);
+    backdrop-filter: blur(15px);
+}
+
 .homeButton {
     position: absolute;
     width: 219px;
@@ -77,6 +88,17 @@ body {
     background: #DBCEFF;
     border-radius: 20px;
     cursor: pointer;
+}
+
+.homeButton-Hovered {
+    position: absolute;
+    width: 219px;
+    height: 41px;
+    left: 13px;
+    top: 0;
+    border-radius: 20px;
+    cursor: pointer;
+    background: #3fe7c8;
 }
 
 .createPfx {

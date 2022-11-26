@@ -4,7 +4,9 @@ import '../styles/SideMenu.css';
 export default function SideBar() {
     return(
         <div className={'sideBar'}>
+            <div className={'coolSideBar'}>
 
+            </div>
         </div>
     )
 }
