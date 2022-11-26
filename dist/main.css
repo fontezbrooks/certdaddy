@@ -144,5 +144,16 @@ body {
     border-radius: 20px;
 }
 
+.imageViewer {
+    position: absolute;
+    width: 249px;
+    height: 274px;
+    left: -68px;
+    top: 385px;
+    transform: scale(0.5, 0.5);
+    -ms-transform: scale(0.5, 0.5);
+    animation: spin 2s linear infinite;
+}
+
 
 /*# sourceMappingURL=main.css.map*/
