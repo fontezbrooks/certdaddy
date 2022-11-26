@@ -7,7 +7,7 @@
     "build": "webpack --mode development",
     "start": "electron ./dist/main.js",
     "build:react": "webpack --config webpack.react.config.js --mode development",
-    "build:all": "webpack --mode development && webpack --config webpack.react.config.js --mode development",
+    "build:all": "webpack --mode development --config webpack.preload.config.js && webpack --mode development && webpack --config webpack.react.config.js --mode development",
     "e2e": "playwright test"
   },
   "repository": "https://github.com/fontezbrooks/certdaddy.git",
