@@ -1,3 +1,6 @@
+/*!***************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/app/styles/Main.css ***!
+  \***************************************************************************/
 body {
     background: linear-gradient(240.08deg, #7758D1 12.97%, rgba(219, 206, 255, 0.364583) 68.41%, #55438C 100.21%);
     margin: 0;
@@ -111,6 +114,22 @@ body {
     background: linear-gradient(266.75deg, #7758D1 76.81%, rgba(113, 85, 198, 0.916567) 90.8%, rgba(44, 72, 48, 0.2) 111.05%, rgba(88, 71, 152, 0.583333) 111.05%);
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
     border-radius: 20px;
+    will-change: transform;
+    transition: transform 450ms;
+}
+
+.submitButton-Hovered {
+    position: absolute;
+    width: 141px;
+    height: 53px;
+    left: 314px;
+    top: 288px;
+
+    background: linear-gradient(190.33deg, #C441F4 4.76%, #00DAEA 96.63%);
+    box-shadow: 0 4px 4px rgb(113, 255, 97);
+    border-radius: 20px;
+    transition: transform 125ms;
+    transform: translateY(-3px);
 }
 
 .submitButtonText {
@@ -139,6 +158,37 @@ body {
     top: 89px;
 }
 
+.animate {
+    animation-duration: 0.3s;
+    animation-name: animation-fade;
+    animation-delay: 0.2s;
+    animation-fill-mode: backwards;
+}
+
+@keyframes animation-fade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.animate.pop {
+    animation-name: animate-pop;
+    animation-timing-function: cubic-bezier(.26,.53,.74,1.48);
+}
+
+@keyframes animate-pop {
+    0% {
+        opacity: 0;
+        transform: scale(0.5,0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1,1);
+    }
+}
 .upperRightForm {
     position: absolute;
     width: 219px;
@@ -151,13 +201,12 @@ body {
     border-radius: 20px;
 }
 
-.upperRightFormText {
+.formText {
     position: absolute;
     width: 134px;
     height: 20px;
     left: 42px;
     top: 10px;
-
     font-family: 'ui-sans-serif', "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
     font-style: italic;
     font-weight: 600;
@@ -185,8 +234,7 @@ body {
     width: 219px;
     height: 41px;
     left: 150px;
-    top: 138px;
-
+    top: 190px;
     background: #DBCEFF;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
     border-radius: 20px;
@@ -197,8 +245,7 @@ body {
     width: 219px;
     height: 41px;
     left: 400px;
-    top: 140px;
-
+    top: 192px;
     background: #DBCEFF;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
     border-radius: 20px;
@@ -210,7 +257,6 @@ body {
     height: 41px;
     left: 150px;
     top: 190px;
-
     background: #DBCEFF;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
     border-radius: 20px;
@@ -222,7 +268,6 @@ body {
     height: 41px;
     left: 400px;
     top: 192px;
-
     background: #DBCEFF;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
     border-radius: 20px;
@@ -233,6 +278,9 @@ body {
 ::-moz-placeholder { color: #DBCEFF; }
 :-ms-input-placeholder { color: #DBCEFF; }
 
+/*!*******************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/app/styles/SideMenu.css ***!
+  \*******************************************************************************/
 .sideMenu {
     position: absolute;
     width: 320px;

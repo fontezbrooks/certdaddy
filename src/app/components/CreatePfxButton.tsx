@@ -8,6 +8,7 @@ export default function CreatePfxButton() {
             className={`${isHovered}`}
             onMouseOver={() => setIsHovered('createPfx-Hovered')}
             onMouseLeave={() => setIsHovered('createPfx')}
+            data-testid={'createPfxButton'}
         >
             <p className={'pfxText'}>
                 CREATE PFX

@@ -8,6 +8,7 @@ export default function CreateCsrButton() {
             className={`${isHovered}`}
             onMouseOver={()=> setIsHovered('createCsr-Hovered')}
             onMouseLeave={()=> setIsHovered('createCsr')}
+            data-testid={'createCsrButton'}
         >
             <p className={'csrText'}>
                 CREATE CSR

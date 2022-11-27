@@ -5,7 +5,7 @@ export default function HomeView() {
     return(
         <div className={'mainContent'}>
             <div className={'container'}>
-                <div className={'mainLand'}>
+                <div className={'dynamicIslandDocked'}>
                     <h1>
                         Welcome to the Home Page!!!!
                     </h1>

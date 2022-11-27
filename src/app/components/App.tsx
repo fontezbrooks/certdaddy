@@ -11,6 +11,10 @@ import FreeBtcView from "./views/FreeBtcView";
 import DecodeCsrView from "./views/DecodeCsrView";
 
 export default function App() {
+    const [showMainViewContent, setShowMainViewContent] = React.useState(true);
+    const handleShowMainViewContent = () => {
+        setShowMainViewContent(false);
+    }
     return(
         <div className={'decor'}>
             <nav>

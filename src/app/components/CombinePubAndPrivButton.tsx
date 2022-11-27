@@ -8,6 +8,7 @@ export default function CombinePubAndPrivButton() {
             className={`${isHovered}`}
             onMouseOver={() => setIsHovered('importCerts-Hovered')}
             onMouseLeave={() => setIsHovered('importCerts')}
+            data-testId={'combinePubAndPrivButton'}
         >
             <p className={'combineText'}>
                 COMBINE PUBLIC AND PRIVATE KEY

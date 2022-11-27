@@ -8,6 +8,7 @@ export default function DecodeCsrButton() {
             className={`${isHovered}`}
             onMouseOver={() => setIsHovered('decodeCsr-Hovered')}
             onMouseLeave={() => setIsHovered('decodeCsr')}
+            data-testid={'decodeCsrButton'}
         >
             <p className={'decodeText'}>
                 DECODE CSR
