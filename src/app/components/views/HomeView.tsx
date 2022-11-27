@@ -1,14 +1,14 @@
 import React from 'react';
 import '../../styles/Main.css';
+import MainContent from "../MainContent";
 
 export default function HomeView() {
     return(
         <div className={'mainContent'}>
             <div className={'container'}>
-                <div className={'dynamicIslandDocked'}>
-                    <h1>
-                        Welcome to the Home Page!!!!
-                    </h1>
+                <div className={'dynamicIsland'}/>
+                <div>
+                    <MainContent/>
                 </div>
             </div>
         </div>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { Route, Routes } from 'react-router-dom';
 import '../styles/Main.css';
 import SideMenu from "./SideMenu";
@@ -11,10 +11,6 @@ import FreeBtcView from "./views/FreeBtcView";
 import DecodeCsrView from "./views/DecodeCsrView";
 
 export default function App() {
-    const [showMainViewContent, setShowMainViewContent] = React.useState(true);
-    const handleShowMainViewContent = () => {
-        setShowMainViewContent(false);
-    }
     return(
         <div className={'decor'}>
             <nav>
