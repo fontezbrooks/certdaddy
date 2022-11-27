@@ -1,18 +1,30 @@
 import React from 'react';
-import { Route, Routes, useNavigate } from 'react-router-dom';
-import Home from "./Home";
+import { Route, Routes } from 'react-router-dom';
 import '../styles/Main.css';
 import SideMenu from "./SideMenu";
+import HomeView from "./views/HomeView";
+import PfxCreationView from "./views/PfxCreationView";
+import CsrCreationView from "./views/CsrCreationView";
+import ViewForInstallCerts from "./views/ViewForInstallCerts";
+import CombineCertsView from "./views/CombineCertsView";
+import FreeBtcView from "./views/FreeBtcView";
+import DecodeCsrView from "./views/DecodeCsrView";
 
 export default function App() {
     return(
         <div className={'decor'}>
-            <SideMenu/>
-            <Home/>
+            <nav>
+                <SideMenu/>
+            </nav>
             <Routes>
-                <Route path="/" element={<Home />} />
+                <Route path="/" element={<HomeView/>} />
+                <Route path="/createPfx" element={<PfxCreationView />} />
+                <Route path="/createCsr" element={<CsrCreationView />} />
+                <Route path="/installCerts" element={<ViewForInstallCerts />} />
+                <Route path="/combineCerts" element={<CombineCertsView />} />
+                <Route path="/decodeCsr" element={<DecodeCsrView />} />
+                <Route path="/freeBtc" element={<FreeBtcView />} />
             </Routes>
         </div>
-
     )
 }

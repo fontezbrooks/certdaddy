@@ -9,7 +9,7 @@ export default function Categories() {
             <div className={'imageViewer'}>
                 <ImageViewer image={'images/CertDaddyOutline.PNG'}/>
             </div>
-            <OptionHolders/>
+            <OptionHolders />
         </div>
     )
 }

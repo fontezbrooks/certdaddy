@@ -40,13 +40,31 @@
 
 .coolSideBar {
     position: absolute;
-    width: 37px;
-    height: 403px;
-    left: 38px;
-    top: 44px;
-    border-radius: 40% 2% 2% 44%;
-    background: rgba(29, 32, 62, 0.3);
+    width: 12px;
+    height: 844px;
+    left: 8px;
+    top: 0;
+
+    background: rgba(56, 58, 87, 0.5);
+    box-shadow: -1px 0 0 rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(15px);
+}
+
+.buttonCards {
+    background: #DBCEFF;
+    border-radius: 20px;
+    cursor: pointer;
+    will-change: transform;
+    transition: transform 450ms;
+    box-shadow: 0 4px 4px rgba(196, 65, 244, 0.25);
+}
+
+.buttonCards-Hovered {
+    border-radius: 20px;
+    cursor: pointer;
+    background: linear-gradient(190.33deg, #C441F4 4.76%, #00DAEA 96.63%);
+    transition: transform 125ms;
+    transform: translateY(-3px);
 }
 
 .homeButton {
@@ -59,6 +77,9 @@
     background: #DBCEFF;
     border-radius: 20px;
     cursor: pointer;
+    will-change: transform;
+    transition: transform 450ms;
+    box-shadow: 0 4px 4px rgba(196, 65, 244, 0.25);
 }
 
 .homeButton-Hovered {
@@ -69,7 +90,9 @@
     top: 0;
     border-radius: 20px;
     cursor: pointer;
-    background: #3fe7c8;
+    background: linear-gradient(190.33deg, #C441F4 4.76%, #00DAEA 96.63%);
+    transition: transform 125ms;
+    transform: translateY(-3px);
 }
 
 .createPfx {
@@ -81,6 +104,22 @@
     cursor: pointer;
     background: #DBCEFF;
     border-radius: 20px;
+    will-change: transform;
+    transition: transform 450ms;
+    box-shadow: 0 4px 4px rgba(196, 65, 244, 0.25);
+}
+
+.createPfx-Hovered {
+    position: absolute;
+    width: 219px;
+    height: 41px;
+    left: 13px;
+    top: 57px;
+    cursor: pointer;
+    background: linear-gradient(190.33deg, #C441F4 4.76%, #00DAEA 96.63%);
+    border-radius: 20px;
+    transition: transform 125ms;
+    transform: translateY(-3px);
 }
 
 .createCsr {
@@ -92,6 +131,22 @@
     cursor: pointer;
     background: #DBCEFF;
     border-radius: 20px;
+    will-change: transform;
+    transition: transform 450ms;
+    box-shadow: 0 4px 4px rgba(196, 65, 244, 0.25);
+}
+
+.createCsr-Hovered {
+    position: absolute;
+    width: 219px;
+    height: 41px;
+    left: 13px;
+    top: 114px;
+    cursor: pointer;
+    background: linear-gradient(190.33deg, #C441F4 4.76%, #00DAEA 96.63%);
+    border-radius: 20px;
+    transition: transform 125ms;
+    transform: translateY(-3px);
 }
 
 .installCerts {
@@ -103,6 +158,22 @@
     cursor: pointer;
     background: #DBCEFF;
     border-radius: 20px;
+    will-change: transform;
+    transition: transform 450ms;
+    box-shadow: 0 4px 4px rgba(196, 65, 244, 0.25);
+}
+
+.installCerts-Hovered {
+    position: absolute;
+    width: 219px;
+    height: 41px;
+    left: 13px;
+    top: 171px;
+    cursor: pointer;
+    background: linear-gradient(190.33deg, #C441F4 4.76%, #00DAEA 96.63%);
+    border-radius: 20px;
+    transition: transform 125ms;
+    transform: translateY(-3px);
 }
 
 .importCerts {
@@ -114,6 +185,22 @@
     cursor: pointer;
     background: #DBCEFF;
     border-radius: 20px;
+    will-change: transform;
+    transition: transform 450ms;
+    box-shadow: 0 4px 4px rgba(196, 65, 244, 0.25);
+}
+
+.importCerts-Hovered {
+    position: absolute;
+    width: 219px;
+    height: 41px;
+    left: 13px;
+    top: 228px;
+    cursor: pointer;
+    background: linear-gradient(190.33deg, #C441F4 4.76%, #00DAEA 96.63%);
+    border-radius: 20px;
+    transition: transform 125ms;
+    transform: translateY(-3px);
 }
 
 .decodeCsr {
@@ -125,6 +212,22 @@
     cursor: pointer;
     background: #DBCEFF;
     border-radius: 20px;
+    will-change: transform;
+    transition: transform 450ms;
+    box-shadow: 0 4px 4px rgba(196, 65, 244, 0.25);
+}
+
+.decodeCsr-Hovered {
+    position: absolute;
+    width: 219px;
+    height: 41px;
+    left: 13px;
+    top: 285px;
+    cursor: pointer;
+    background: linear-gradient(190.33deg, #C441F4 4.76%, #00DAEA 96.63%);
+    border-radius: 20px;
+    transition: transform 125ms;
+    transform: translateY(-3px);
 }
 
 .freeBtc {
@@ -136,6 +239,22 @@
     cursor: pointer;
     background: #DBCEFF;
     border-radius: 20px;
+    will-change: transform;
+    transition: transform 450ms;
+    box-shadow: 0 4px 4px rgba(196, 65, 244, 0.25);
+}
+
+.freeBtc-Hovered {
+    position: absolute;
+    width: 219px;
+    height: 41px;
+    left: 13px;
+    top: 342px;
+    cursor: pointer;
+    background: linear-gradient(190.33deg, #C441F4 4.76%, #00DAEA 96.63%);
+    border-radius: 20px;
+    transition: transform 125ms;
+    transform: translateY(-3px);
 }
 
 .imageViewer {

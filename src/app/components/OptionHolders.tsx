@@ -7,17 +7,32 @@ import InstallCertsButton from "./InstallCertsButton";
 import DecodeCsrButton from "./DecodeCsrButton";
 import FreeBtcButton from "./FreeBtcButton";
 import CombinePubAndPrivButton from "./CombinePubAndPrivButton";
+import {Link} from "react-router-dom";
 
-export default function OptionHolders(){
+export default function OptionHolders() {
     return(
         <div className={'optionHolders'}>
-            <HomeButton/>
-            <CreatePfxButton/>
-            <CreateCsrButton/>
-            <InstallCertsButton/>
-            <CombinePubAndPrivButton/>
-            <DecodeCsrButton/>
-            <FreeBtcButton/>
+            <Link to={"/"}>
+                <HomeButton />
+            </Link>
+            <Link to={"/createPfx"}>
+                <CreatePfxButton />
+            </Link>
+            <Link to={"/createCsr"}>
+                <CreateCsrButton/>
+            </Link>
+            <Link to={"/installCerts"}>
+                <InstallCertsButton/>
+            </Link>
+            <Link to={"/combineCerts"}>
+                <CombinePubAndPrivButton/>
+            </Link>
+            <Link to={"/decodeCsr"}>
+                <DecodeCsrButton/>
+            </Link>
+            <Link to={"/freeBtc"}>
+                <FreeBtcButton/>
+            </Link>
         </div>
     )
 }
