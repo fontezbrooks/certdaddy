@@ -9,13 +9,15 @@ import ViewForInstallCerts from "./views/ViewForInstallCerts";
 import CombineCertsView from "./views/CombineCertsView";
 import FreeBtcView from "./views/FreeBtcView";
 import DecodeCsrView from "./views/DecodeCsrView";
+import InputForm from "./forms/InputForm";
 
 export default function App() {
     return(
-        <div className={'decor'}>
+        <div >
             <nav>
                 <SideMenu/>
             </nav>
+            <InputForm/>
             <Routes>
                 <Route path="/" element={<HomeView/>} />
                 <Route path="/createPfx" element={<PfxCreationView />} />

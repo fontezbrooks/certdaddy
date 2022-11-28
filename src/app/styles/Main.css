@@ -1,8 +1,3 @@
-body {
-    background: linear-gradient(240.08deg, #7758D1 12.97%, rgba(219, 206, 255, 0.364583) 68.41%, #55438C 100.21%);
-    margin: 0;
-}
-
 .decor {
     position: absolute;
     width: 1257px;
@@ -99,6 +94,29 @@ body {
     background: linear-gradient(251.16deg, rgba(133, 130, 239, 0.7) 1.87%, #01B7C5 90.87%);
     box-shadow: inset 0 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
+}
+
+.page {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.usage {
+    position: absolute;
+    top: 40px;
+    line-height: 50px;
+    z-index: 1000;
+    color: white;
+    font-size: 20px;
+    width: 100%;
+    text-align: center;
+    font-family: "Arial Black", Gadget, sans-serif;
+    pointer-events: none;
 }
 
 .submitButton {
