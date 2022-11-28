@@ -4,23 +4,21 @@ import SpikeInput from "./SpikeIntput";
 
 export default function InputForm() {
     const [isExpanded, setIsExpanded] = React.useState(false);
-    const [thisDefault, setShowDefault] = React.useState(<section className={'section'} onClick={(e) => toggleIsActive(e)}>
+    const [thisDefault, setShowDefault] = React.useState(<>
         <div className="close-section" onClick={() => handleCloseClick()} onMouseOver={() => handleCloseClick()} onDoubleClick={() => handleCloseClick()} onMouseEnter={() => handleCloseClick()}>
             &times;
         </div>
         <div className="demo-box">
             Section 1
         </div>
-    </section>);
-    const handleIsExpanded = () => {
-        setIsExpanded(!isExpanded);
-    }
+    </>);
+
     const toggleIsActive = (e: any) => {
         e.preventDefault();
         const className = ["section", "is-expanded"];
         e.currentTarget.classList.add(...className);
         document.body.classList.toggle('has-expanded-item', true);
-        setShowDefault(<SpikeInput isExpanded={isExpanded}/>);
+        setShowDefault(<SpikeInput handleCloseClick={() => handleCloseClick()}/>);
     }
     const handleCloseClick = () => {
         document.body.classList.toggle('has-expanded-item', false);
@@ -43,11 +41,21 @@ export default function InputForm() {
                 console.log(e);
             }
             setIsExpanded(false);
+            setShowDefault(<>
+                <div className="close-section" onClick={() => handleCloseClick()} onMouseOver={() => handleCloseClick()} onDoubleClick={() => handleCloseClick()} onMouseEnter={() => handleCloseClick()}>
+                    &times;
+                </div>
+                <div className="demo-box">
+                    Section 1
+                </div>
+            </>);
         });
     }
     return(
         <main className={'main'}>
-            {thisDefault}
+            <section className={'section'} onClick={(e) => toggleIsActive(e)}>
+                {thisDefault}
+            </section>
             <section className={'section'} onClick={(e) => toggleIsActive(e)}>
                 <div className="close-section" onClick={() => handleCloseClick()} onMouseOver={() => handleCloseClick()} onDoubleClick={() => handleCloseClick()} onMouseEnter={() => handleCloseClick()}>
                     &times;

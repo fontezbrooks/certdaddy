@@ -3,84 +3,45 @@ import './styles/InputForm.css';
 import './styles/SpikeInput.css';
 
 interface Props {
-    isExpanded: boolean;
+    handleCloseClick: () => void;
 }
-export default function SpikeInput({isExpanded}: Props) {
+export default function SpikeInput({handleCloseClick}: Props) {
+    const [thisDefault, setShowDefault] = React.useState(true);
     const toggleIsActive = (e: any) => {
         e.preventDefault();
         const className = ["section", "is-expanded"];
         e.currentTarget.classList.add(...className);
         document.body.classList.toggle('has-expanded-item', true);
     }
-    let expanded;
-    expanded = <section className="section is-expanded">
-        <div className="close-section" onClick={() => handleCloseClick()} onMouseOver={() => handleCloseClick()} onDoubleClick={() => handleCloseClick()} onMouseEnter={() => handleCloseClick()}>
-            &times;
-        </div>
-        <div className="left">
-            <div className="header">
-                <h2 className="animation a1">Welcome Back</h2>
-                <h4 className="animation a2">Log in to your account using email and password</h4>
-            </div>
-            <div className="form">
-                <input type="email" className="form-field animation a3" placeholder="Email Address"/>
-                <input type="password" className="form-field animation a4" placeholder="Password"/>
-                <p className="animation a5"><a href="#">Forgot Password</a></p>
-                <button className="animation a6">LOGIN</button>
-            </div>
-        </div>
-        <div className="right"></div>
-    </section> ? isExpanded : <section className={'section'} onClick={(e) => toggleIsActive(e)}>
-        <div className="close-section" onClick={() => handleCloseClick()} onMouseOver={() => handleCloseClick()} onDoubleClick={() => handleCloseClick()} onMouseEnter={() => handleCloseClick()}>
-            &times;
-        </div>
-        <div className="demo-box">
-            Section 1
-        </div>
-    </section>
-    const handleCloseClick = () => {
-        document.body.classList.toggle('has-expanded-item', false);
-        const sections = document.querySelectorAll(".is-expanded");
-        sections.forEach((section) => {
-            try {
-                section.classList.remove("is-expanded");
-            } catch (e) {
-                console.log(e);
-            }
-            section.classList.remove("is-expanded");
-            try {
-                section.classList.add("section");
-            } catch (e) {
-                console.log(e);
-            }
-            try {
-                document.body.classList.toggle('has-expanded-item', false);
-            } catch (e) {
-                console.log(e);
-            }
-        });
-    }
-    return(
-        <main className={'main'}>
-            <section className="section is-expanded">
-                <div className="close-section" onClick={() => handleCloseClick()} onMouseOver={() => handleCloseClick()} onDoubleClick={() => handleCloseClick()} onMouseEnter={() => handleCloseClick()}>
-                    &times;
-                </div>
-                <div className="left">
-                    <div className="header">
-                        <h2 className="animation a1">Welcome Back</h2>
-                        <h4 className="animation a2">Log in to your account using email and password</h4>
-                    </div>
-                    <div className="form">
-                        <input type="email" className="form-field animation a3" placeholder="Email Address"/>
-                        <input type="password" className="form-field animation a4" placeholder="Password"/>
-                        <p className="animation a5"><a href="#">Forgot Password</a></p>
-                        <button className="animation a6">LOGIN</button>
-                    </div>
-                </div>
-                <div className="right"></div>
-            </section>
-        </main>
 
+    return(
+        <>
+            <div className="close-section" onClick={() => handleCloseClick()} onMouseOver={() => handleCloseClick()} onDoubleClick={() => handleCloseClick()} onMouseEnter={() => handleCloseClick()}>
+                &times;
+            </div>
+            <div className="demo-box">
+                <form>
+                    <div className="field" tabIndex={1}>
+                        <label htmlFor="username">
+                            <i className="far fa-user"></i>Your Name
+                        </label>
+                        <input name="username" type="text" placeholder="e.g. john doe" required/>
+                    </div>
+                    <div className="field" tabIndex={2}>
+                        <label htmlFor="email">
+                            <i className="far fa-envelope"></i>Your Email
+                        </label>
+                        <input name="email" type="text" placeholder="email@domain.com" required/>
+                    </div>
+                    <div className="field" tabIndex={3}>
+                        <label htmlFor="message">
+                            <i className="far fa-edit"></i>Your Message
+                        </label>
+                        <textarea name="message" placeholder="type here" required></textarea>
+                    </div>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </>
     )
 }
