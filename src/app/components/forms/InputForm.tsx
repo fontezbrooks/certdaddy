@@ -3,6 +3,7 @@ import './styles/InputForm.css';
 import SpikeInput from "./SpikeIntput";
 
 export default function InputForm() {
+    const [isExpanded, setIsExpanded] = React.useState(false);
     const [thisDefault, setShowDefault] = React.useState(<section className={'section'} onClick={(e) => toggleIsActive(e)}>
         <div className="close-section" onClick={() => handleCloseClick()} onMouseOver={() => handleCloseClick()} onDoubleClick={() => handleCloseClick()} onMouseEnter={() => handleCloseClick()}>
             &times;
@@ -11,14 +12,16 @@ export default function InputForm() {
             Section 1
         </div>
     </section>);
+    const handleIsExpanded = () => {
+        setIsExpanded(!isExpanded);
+    }
     const toggleIsActive = (e: any) => {
         e.preventDefault();
         const className = ["section", "is-expanded"];
         e.currentTarget.classList.add(...className);
         document.body.classList.toggle('has-expanded-item', true);
-        setShowDefault(<SpikeInput/>);
+        setShowDefault(<SpikeInput isExpanded={isExpanded}/>);
     }
-
     const handleCloseClick = () => {
         document.body.classList.toggle('has-expanded-item', false);
         const sections = document.querySelectorAll(".is-expanded");
@@ -39,6 +42,7 @@ export default function InputForm() {
             } catch (e) {
                 console.log(e);
             }
+            setIsExpanded(false);
         });
     }
     return(
