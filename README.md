@@ -1,2 +1,2 @@
 # certdaddy
-An way to create and manage certificates
+A way to create and manage certificates
