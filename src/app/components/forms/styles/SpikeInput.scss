@@ -44,7 +44,7 @@ textarea {
 
 label,
 [placeholder] {
-  color: #555;
+  color: #000;
 }
 
 label i {
@@ -90,6 +90,11 @@ button:hover {
   letter-spacing: 2px;
   box-shadow: none;
 }
+
+::placeholder {
+  color: #ffffff;
+}
+
 
 .social-media {
   display: flex;
