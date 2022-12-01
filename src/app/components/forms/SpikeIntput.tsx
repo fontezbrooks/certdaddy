@@ -14,12 +14,13 @@ export default function SpikeInput({handleCloseClick}: Props) {
     }
 
     const handleChange = (e: any) => {
-        setCertDetails({certName: e.target.value, certPassword: e.target.value, commonName: e.target.value, subjectAltName: [], [e.target.name]: e.target.value});
+        // setCertDetails({certName: e.target.value, certPassword: e.target.value, commonName: e.target.value, subjectAltName: [], [e.target.name]: e.target.value});
+        setCertDetails({ ...certDetails, [e.target.name]: e.target.value });
     }
-    return(
-        <>
-            <div className="close-section" onClick={() => handleCloseClick()} onMouseOver={() => handleCloseClick()} onDoubleClick={() => handleCloseClick()} onMouseEnter={() => handleCloseClick()}>
-                &times;
+        return(
+            <>
+                <div className="close-section" onClick={() => handleCloseClick()} onMouseOver={() => handleCloseClick()} onDoubleClick={() => handleCloseClick()} onMouseEnter={() => handleCloseClick()}>
+                    &times;
             </div>
             <div className="demo-box">
                 <form onSubmit={(e) => handleSubmit(e)}>
@@ -51,13 +52,23 @@ export default function SpikeInput({handleCloseClick}: Props) {
                         <label htmlFor="message">
                             <i className="far fa-edit"></i>Subject Alternative Name(s)
                         </label>
-                        <textarea name="message" placeholder="e.g. CertName,*.company.com,otherserver" required onChange={(e)=> handleChange(e)} value={certDetails.subjectAltName}></textarea>
+                        <textarea name="message"
+                                  placeholder="e.g. CertName,*.company.com,otherserver"
+                                  required
+                                  onChange={(e)=> handleChange(e)}
+                                  value={certDetails.subjectAltName}>
+                        </textarea>
                     </div>
                     <div className="field" tabIndex={4}>
                         <label htmlFor={"password"}>
                             <i className="far fa-envelope"></i>Certificate Password
                         </label>
-                        <input name="password" type="password" placeholder="******" required onChange={(e) => handleChange(e)} value={certDetails.certPassword}/>
+                        <input name="password"
+                               type="password"
+                               placeholder="******"
+                               required
+                               onChange={(e) => handleChange(e)}
+                               value={certDetails.certPassword}/>
                     </div>
                     <button type="submit" onClick={(e) => handleSubmit(e)}>Submit</button>
                 </form>
