@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import { useForm } from 'react-hook-form';
 import '../../styles/Main.css';
 import './styles/DecodeCsr.css';
-
+import $ from 'jquery';
 enum KeySize {
     keySize2048 = 2048,
     keySize4096 = 4096,
@@ -14,22 +14,61 @@ interface IFormInput {
     subjectAltName: [string];
     keySize: KeySize;
 }
+
+declare global {
+    interface Window {
+        api: any;
+    }
+}
 export default function PfxCreationView() {
     const { register, formState: { errors }, handleSubmit } = useForm<IFormInput>();
-    const onSubmit = (data: IFormInput) => console.log(data);
+    const [showCompletionIcon, setShowCompletionIcon] = React.useState(<div className={'draggableIcon'}><h2>CREATE PFX CERTIFICATE!!!</h2></div>);
+    const [draggableIcon, setDraggableIcon] = React.useState(<div></div>);
+    const inputFile = useRef<HTMLInputElement | null>(null);
+    const onSubmit = (data: IFormInput) => {
+        console.log(data);
+    };
+    const handleFileClick = () => {
+        inputFile.current?.click();
+    }
+    const tempWait = () => {
+        setTimeout(() => {
+            $('.circle-loader').toggleClass('load-complete');
+            $('.checkmark').toggle();
+            setDraggableIcon(
+                <div draggable={'true'} className={'draggableIcon'}>
+                    <h2 className={'iconTextLeft'}>
+                        Drag or
+                    </h2>
+                    <input type='file' id='file' ref={inputFile} style={{display: 'none'}}/>
+                    <img src={'C:\\Users\\carlhiggins\\src\\certdaddy\\dist\\images\\drag-and-drop.png'} alt={'icon'} onClick={() => handleFileClick()} onDragStart={(e) => handleDrag(e)}/>
+                    <h2 className={'iconTextRight'}>
+                        Click to Download!!!
+                    </h2>
+                </div>
+            )
+        }, 3000);
+    };
+    const handleClick = () => {
+        setShowCompletionIcon(
+            <div className="circle-loader">
+                <div className="checkmark draw">
+                </div>
+            </div>
+        );
+        tempWait();
+    };
+
+    const handleDrag = (e: any) => {
+        e.preventDefault();
+        window.api.startDrag('drag-and-drop-1.md');
+    }
+
     return(
         <div className={'mainContent'} data-testId={"mainContentView"}>
             <div className={'container'}>
-                <div className={'loader'}>
-                    <svg viewBox="0 0 500 500">
-                        <path id="curve" d="M73.2,148.6c4-6.1,65.5-96.8,178.6-95.6c111.3,1.2,170.8,90.3,175.1,97" />
-                        <text width="500">
-                            <textPath xlinkHref="#curve" className={'textSpin'}>
-                                CERT DADDY CERT DADDY CERT DADDY
-                            </textPath>
-                        </text>
-                    </svg>
-                </div>
+                {showCompletionIcon}
+                {draggableIcon}
                 <div className={'mainLand'}>
                     <form className={'form-container'} onSubmit={handleSubmit(onSubmit)}>
                         <main className={'animate pop form-fields'}>
@@ -50,8 +89,8 @@ export default function PfxCreationView() {
                             <label>Common Name</label>
                             <input {...register("commonName")}/>
                             <label>Subject Alternative Name</label>
-                            <input {...register("subjectAltName")}/>
-                            <button type={'submit'} className={'submission'}>
+                            <textarea {...register("subjectAltName")}/>
+                            <button id="toggle" type={'submit'} className={'submission'} onClick={() => handleClick()}>
                                 Submit
                             </button>
                         </main>

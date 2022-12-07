@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/SideMenu.css';
+import '../../styles/SideMenu.css';
 
 export default function CreateCsrButton() {
     const [isHovered, setIsHovered] = React.useState('createCsr');

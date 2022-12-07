@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/SideMenu.css';
+import '../../styles/SideMenu.css';
 import HomeButton from "./HomeButton";
 import CreatePfxButton from "./CreatePfxButton";
 import CreateCsrButton from "./CreateCsrButton";

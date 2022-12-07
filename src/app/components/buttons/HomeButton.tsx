@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/SideMenu.css';
+import '../../styles/SideMenu.css';
 
 export default function HomeButton() {
     const [isHovered, setIsHovered] = React.useState('homeButton');

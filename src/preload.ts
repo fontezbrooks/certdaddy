@@ -12,5 +12,8 @@ contextBridge.exposeInMainWorld('api', {
     startCsr: (filename: any) => ipcRenderer.invoke('csr', filename),
     combinePfx: (paths: any) => ipcRenderer.invoke('combinePfx', paths),
     installPfx: (path: any) => ipcRenderer.invoke('installPfx', path),
-    installCert: (path: any) => ipcRenderer.invoke('installCert', path)
+    installCert: (path: any) => ipcRenderer.invoke('installCert', path),
+    startDrag: (fileName: any) => {
+        ipcRenderer.send('ondragstart', fileName)
+    }
 })
