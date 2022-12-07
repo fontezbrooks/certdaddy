@@ -5,22 +5,28 @@ import './styles/SpikeInput.css';
 interface Props {
     handleCloseClick: () => void;
 }
+
 export default function SpikeInput({handleCloseClick}: Props) {
-    const [certDetails, setCertDetails] = React.useState({ certName: '', certPassword: '', commonName: '', subjectAltName: [''] });
+    const [certDetails, setCertDetails] = React.useState({
+        certName: '',
+        certPassword: '',
+        commonName: '',
+        subjectAltName: ['']
+    });
     const handleSubmit = (e: any) => {
-        const { certName, certPassword, commonName, subjectAltName } = certDetails;
+        const {certName, certPassword, commonName, subjectAltName} = certDetails;
         e.preventDefault();
         alert(`certName: ${certName}\n certPassword: ${certPassword}\n commonName: ${commonName}\n subjectAltName: ${subjectAltName}`);
     }
 
     const handleChange = (e: any) => {
-        // setCertDetails({certName: e.target.value, certPassword: e.target.value, commonName: e.target.value, subjectAltName: [], [e.target.name]: e.target.value});
-        setCertDetails({ ...certDetails, [e.target.name]: e.target.value });
+        setCertDetails({...certDetails, [e.target.name]: e.target.value});
     }
-        return(
-            <>
-                <div className="close-section" onClick={() => handleCloseClick()} onMouseOver={() => handleCloseClick()} onDoubleClick={() => handleCloseClick()} onMouseEnter={() => handleCloseClick()}>
-                    &times;
+    return (
+        <>
+            <div className="close-section" onClick={() => handleCloseClick()} onMouseOver={() => handleCloseClick()}
+                 onDoubleClick={() => handleCloseClick()} onMouseEnter={() => handleCloseClick()}>
+                &times;
             </div>
             <div className="demo-box">
                 <form onSubmit={(e) => handleSubmit(e)}>
@@ -28,7 +34,7 @@ export default function SpikeInput({handleCloseClick}: Props) {
                         <label>
                             <i className="far fa-user"></i>Certificate Name
                         </label>
-                        <input name="certname"
+                        <input name="certName"
                                type="text"
                                placeholder="e.g. CertName"
                                id={"certname"} required
@@ -37,10 +43,10 @@ export default function SpikeInput({handleCloseClick}: Props) {
                         />
                     </div>
                     <div className="field" tabIndex={2}>
-                        <label >
+                        <label>
                             <i className="far fa-envelope"></i>Common Name
                         </label>
-                        <input name="common"
+                        <input name="commonName"
                                type="text"
                                placeholder="e.g. CertName or *.company.com"
                                required
@@ -52,10 +58,10 @@ export default function SpikeInput({handleCloseClick}: Props) {
                         <label htmlFor="message">
                             <i className="far fa-edit"></i>Subject Alternative Name(s)
                         </label>
-                        <textarea name="message"
+                        <textarea name="subjectAltName"
                                   placeholder="e.g. CertName,*.company.com,otherserver"
                                   required
-                                  onChange={(e)=> handleChange(e)}
+                                  onChange={(e) => handleChange(e)}
                                   value={certDetails.subjectAltName}>
                         </textarea>
                     </div>
@@ -63,7 +69,7 @@ export default function SpikeInput({handleCloseClick}: Props) {
                         <label htmlFor={"password"}>
                             <i className="far fa-envelope"></i>Certificate Password
                         </label>
-                        <input name="password"
+                        <input name="certPassword"
                                type="password"
                                placeholder="******"
                                required

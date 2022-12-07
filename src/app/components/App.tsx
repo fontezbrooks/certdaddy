@@ -17,7 +17,7 @@ export default function App() {
             <nav>
                 <SideMenu/>
             </nav>
-            <InputForm/>
+            {/*<InputForm/>*/}
             <Routes>
                 <Route path="/" element={<HomeView/>} />
                 <Route path="/createPfx" element={<PfxCreationView />} />

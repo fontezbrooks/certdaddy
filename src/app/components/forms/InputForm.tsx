@@ -5,7 +5,8 @@ import SpikeInput from "./SpikeIntput";
 export default function InputForm() {
     const [isExpanded, setIsExpanded] = React.useState(false);
     const [thisDefault, setShowDefault] = React.useState(<>
-        <div className="close-section" onClick={() => handleCloseClick()} onMouseOver={() => handleCloseClick()} onDoubleClick={() => handleCloseClick()} onMouseEnter={() => handleCloseClick()}>
+        <div className="close-section" onClick={() => handleCloseClick()} onMouseOver={() => handleCloseClick()}
+             onDoubleClick={() => handleCloseClick()} onMouseEnter={() => handleCloseClick()}>
             &times;
         </div>
         <div className="demo-box">
@@ -42,7 +43,8 @@ export default function InputForm() {
             }
             setIsExpanded(false);
             setShowDefault(<>
-                <div className="close-section" onClick={() => handleCloseClick()} onMouseOver={() => handleCloseClick()} onDoubleClick={() => handleCloseClick()} onMouseEnter={() => handleCloseClick()}>
+                <div className="close-section" onClick={() => handleCloseClick()} onMouseOver={() => handleCloseClick()}
+                     onDoubleClick={() => handleCloseClick()} onMouseEnter={() => handleCloseClick()}>
                     &times;
                 </div>
                 <div className="demo-box">
@@ -51,13 +53,14 @@ export default function InputForm() {
             </>);
         });
     }
-    return(
+    return (
         <main className={'main'}>
             <section className={'section'} onClick={(e) => toggleIsActive(e)}>
                 {thisDefault}
             </section>
             <section className={'section'} onClick={(e) => toggleIsActive(e)}>
-                <div className="close-section" onClick={() => handleCloseClick()} onMouseOver={() => handleCloseClick()} onDoubleClick={() => handleCloseClick()} onMouseEnter={() => handleCloseClick()}>
+                <div className="close-section" onClick={() => handleCloseClick()} onMouseOver={() => handleCloseClick()}
+                     onDoubleClick={() => handleCloseClick()} onMouseEnter={() => handleCloseClick()}>
                     &times;
                 </div>
                 <div className="demo-box">
@@ -65,7 +68,8 @@ export default function InputForm() {
                 </div>
             </section>
             <section className={'section'} onClick={(e) => toggleIsActive(e)}>
-                <div className="close-section" onClick={() => handleCloseClick()} onMouseOver={() => handleCloseClick()} onDoubleClick={() => handleCloseClick()} onMouseEnter={() => handleCloseClick()}>
+                <div className="close-section" onClick={() => handleCloseClick()} onMouseOver={() => handleCloseClick()}
+                     onDoubleClick={() => handleCloseClick()} onMouseEnter={() => handleCloseClick()}>
                     &times;
                 </div>
                 <div className="demo-box">
@@ -73,7 +77,8 @@ export default function InputForm() {
                 </div>
             </section>
             <section className={'section'} onClick={(e) => toggleIsActive(e)}>
-                <div className="close-section" onClick={() => handleCloseClick()} onMouseOver={() => handleCloseClick()} onDoubleClick={() => handleCloseClick()} onMouseEnter={() => handleCloseClick()}>
+                <div className="close-section" onClick={() => handleCloseClick()} onMouseOver={() => handleCloseClick()}
+                     onDoubleClick={() => handleCloseClick()} onMouseEnter={() => handleCloseClick()}>
                     &times;
                 </div>
                 <div className="demo-box">
@@ -81,5 +86,5 @@ export default function InputForm() {
                 </div>
             </section>
         </main>
-    )
-}
+    );
+};
