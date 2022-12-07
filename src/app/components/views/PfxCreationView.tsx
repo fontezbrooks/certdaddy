@@ -1,10 +1,22 @@
 import React from 'react';
+import { useForm } from 'react-hook-form';
 import '../../styles/Main.css';
-import ImageViewer from "../ImageViewer";
+import './styles/DecodeCsr.css';
 
+enum KeySize {
+    keySize2048 = 2048,
+    keySize4096 = 4096,
+}
+interface IFormInput {
+    certName: string;
+    certPassword: string;
+    commonName: string;
+    subjectAltName: [string];
+    keySize: KeySize;
+}
 export default function PfxCreationView() {
-    const [isSubmitHovered, setIsSubmitHovered] = React.useState('submitButton');
-
+    const { register, formState: { errors }, handleSubmit } = useForm<IFormInput>();
+    const onSubmit = (data: IFormInput) => console.log(data);
     return(
         <div className={'mainContent'} data-testId={"mainContentView"}>
             <div className={'container'}>
@@ -19,36 +31,31 @@ export default function PfxCreationView() {
                     </svg>
                 </div>
                 <div className={'mainLand'}>
-                    <div className={'animate pop upperRightForm'}>
-                        <div className={'formText'}>
-                            <input type="input" id="certName" placeholder={'Common Name'} />
-                        </div>
-                    </div>
-                    <div className={'animate pop upperLeftForm'}>
-                        <div className={'formText'}>
-                            <input type="input" id="certName" placeholder={'Certificate Name'} />
-                        </div>
-                    </div>
-                    <div className={'animate pop middleRightForm'}>
-                        <div className={'formText'}>
-                            <input type="input" id="certName" placeholder={'Certificate Password'} />
-                        </div>
-                    </div>
-                    <div className={'animate pop middleLeftForm'}>
-                        <div className={'formText'}>
-                            <input type="input" id="certName" placeholder={'Subject Alternative Names'} />
-                        </div>
-                    </div>
-                    <div
-                        className={`animate pop ${isSubmitHovered}`}
-                        onMouseOver={() => setIsSubmitHovered('submitButton-Hovered')}
-                        onMouseLeave={() => setIsSubmitHovered('submitButton')}
-                        data-testId={'submitButton'}
-                    >
-                        <div className={'submitButtonText'}>
-                            SUBMIT
-                        </div>
-                    </div>
+                    <form className={'form-container'} onSubmit={handleSubmit(onSubmit)}>
+                        <main className={'animate pop form-fields'}>
+                            <label>
+                                Certificate Name
+                            </label>
+                            <input {...register("certName", {required: true})} />
+                            {errors.certName && <span>This field is required</span>}
+                            <label>
+                                Key Size
+                            </label>
+                            <select {...register("keySize")}>
+                                <option value={"keySize2048"}>2048</option>
+                                <option value={"keySize4096"}>4096</option>
+                            </select>
+                            <label>Certificate Password</label>
+                            <input {...register("certPassword")}/>
+                            <label>Common Name</label>
+                            <input {...register("commonName")}/>
+                            <label>Subject Alternative Name</label>
+                            <input {...register("subjectAltName")}/>
+                            <button type={'submit'} className={'submission'}>
+                                Submit
+                            </button>
+                        </main>
+                    </form>
                 </div>
             </div>
         </div>
