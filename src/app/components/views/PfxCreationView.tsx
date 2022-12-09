@@ -11,7 +11,7 @@ interface IFormInput {
     certName: string;
     certPassword: string;
     commonName: string;
-    subjectAltName: [string];
+    subjectAltName: string[];
     keySize: KeySize;
 }
 
