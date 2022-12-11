@@ -27,6 +27,7 @@ export default function PfxCreationView() {
     const inputFile = useRef<HTMLInputElement | null>(null);
     const onSubmit = (data: IFormInput) => {
         console.log(data);
+        window.api.testInvoke(JSON.stringify(data));
     };
     const handleFileClick = () => {
         inputFile.current?.click();

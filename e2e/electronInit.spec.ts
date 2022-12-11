@@ -11,7 +11,7 @@ test('Should Click Create Csr', async () => {
     const window = await electronApp.firstWindow();
     window.on('console', console.log);
     const locator = window.getByTestId('createCsrButton');
-    await window.click('text=Create csr');
+
     expect(await locator.isVisible()).toBe(true);
 })
 
@@ -22,8 +22,8 @@ test('Should Click Create Pfx', async () => {
 
     const locator = window.getByTestId('createPfxButton');
     expect(await locator.isVisible()).toBe(true);
-    await window.click('text=Create Pfx');
-    await electronApp.close();
+
+    // await electronApp.close();
 });
 
 test('Should Click Decode Csr Button', async () => {
@@ -34,7 +34,7 @@ test('Should Click Decode Csr Button', async () => {
     const locator = window.getByTestId('decodeCsrButton');
     expect(await locator.isVisible()).toBe(true);
     await window.click('text=DECODE CSR');
-    await electronApp.close();
+    // await electronApp.close();
 });
 
 test('Should Click COMBINE PUBLIC AND PRIVATE KEY Button', async () => {
@@ -44,6 +44,6 @@ test('Should Click COMBINE PUBLIC AND PRIVATE KEY Button', async () => {
 
     const locator = window.getByTestId('combinePubAndPrivButton');
     expect(await locator.isVisible()).toBe(true);
-    await window.click('text=COMBINE PUBLIC AND PRIVATE KEY');
+
     await electronApp.close();
 });

@@ -2,7 +2,7 @@ import { contextBridge, ipcRenderer, IpcRendererEvent } from 'electron';
 
 contextBridge.exposeInMainWorld('api', {
     // Invoke Methods
-    testInvoke: (args: any) => ipcRenderer.invoke('fileWrite3', args),
+    testInvoke: (args: any) => ipcRenderer.invoke('greeting', args),
     // Send Methods
     testSend: (args: any) => ipcRenderer.invoke('fileName', args),
     // Receive Methods
