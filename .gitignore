@@ -4,3 +4,4 @@ node_modules/
 /playwright/.cache/
 /CertDaddy/CertDaddy/obj/
 /CertDaddy/CertDaddy/bin/
+/Builds/

@@ -14,7 +14,7 @@ certDll = (os.platform() === "win32") ? path.join(process.resourcesPath, "CertDa
         : path.join(process.resourcesPath, "CertDaddyBuilds/Windows/CertDaddy.dll");
 
 let connection = new ConnectionBuilder()
-    .connectTo(testPath)
+    .connectTo("CertDaddy/CertDaddyBuilds/Windows/CertDaddy.exe")
     .build();
 const createWindow = () => {
     mainWindow = new BrowserWindow({
