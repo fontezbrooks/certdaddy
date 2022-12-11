@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\carlhiggins\\src\\certdaddy\\CertDaddy\\CertDaddy\\CertDaddy.csproj": {}
+    "C:\\Users\\carlhiggins\\src\\certdaddy\\CertDaddy\\ElectronController\\ElectronController.csproj": {}
   },
   "projects": {
-    "C:\\Users\\carlhiggins\\src\\certdaddy\\CertDaddy\\CertDaddy\\CertDaddy.csproj": {
+    "C:\\Users\\carlhiggins\\src\\certdaddy\\CertDaddy\\ElectronController\\ElectronController.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\carlhiggins\\src\\certdaddy\\CertDaddy\\CertDaddy\\CertDaddy.csproj",
-        "projectName": "CertDaddy",
-        "projectPath": "C:\\Users\\carlhiggins\\src\\certdaddy\\CertDaddy\\CertDaddy\\CertDaddy.csproj",
+        "projectUniqueName": "C:\\Users\\carlhiggins\\src\\certdaddy\\CertDaddy\\ElectronController\\ElectronController.csproj",
+        "projectName": "ElectronController",
+        "projectPath": "C:\\Users\\carlhiggins\\src\\certdaddy\\CertDaddy\\ElectronController\\ElectronController.csproj",
         "packagesPath": "C:\\Users\\carlhiggins\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\carlhiggins\\src\\certdaddy\\CertDaddy\\CertDaddy\\obj\\",
+        "outputPath": "C:\\Users\\carlhiggins\\src\\certdaddy\\CertDaddy\\ElectronController\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -44,12 +44,6 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "dependencies": {
-            "ElectronCgi.DotNet": {
-              "target": "Package",
-              "version": "[1.0.4-beta, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
